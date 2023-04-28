@@ -1,0 +1,25 @@
+README file for deploying a Spring Boot app with MongoDB in Kubernetes using a Kubernetes Deployment strategy:
+
+Create a Docker image of your Spring Boot app:
+
+Add a Dockerfile to your project root directory
+In the Dockerfile, specify the base image, copy the project JAR file, and expose the necessary port(s)
+Build the Docker image locally and test it
+Push the Docker image to a container registry like Docker Hub or Google Container Registry
+Provision a MongoDB instance in Kubernetes:
+
+Create a Kubernetes deployment and service for the MongoDB instance
+Use a stateful set to ensure persistence of data across pod restarts
+Configure the MongoDB instance to use persistent volume claims to store data
+Ensure that the service is exposed within the Kubernetes cluster
+Create a Kubernetes deployment for your Spring Boot app:
+
+Create a Kubernetes deployment that specifies the Docker image and environmental variables required for integration with the MongoDB instance
+Use a Kubernetes secret to store sensitive data like passwords
+Specify the necessary resource limits and requests for CPU and memory
+Configure readiness and liveness probes to ensure that the pod is healthy and ready to serve traffic
+Apply the Kubernetes manifest files:
+
+Use kubectl to apply the Kubernetes manifest files for the MongoDB instance and Spring Boot app
+Verify that the resources have been provisioned correctly and are running as expected
+Test the connectivity between the Spring Boot app and MongoDB instance to ensure that the integration is working correctly
